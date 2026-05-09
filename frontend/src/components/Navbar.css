@@ -1,0 +1,140 @@
+.sidebar-nav {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--azul);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 0;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: 40px;
+  background: var(--dorado);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--azul);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  color: var(--dorado);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-sub {
+  color: #a8bcd4;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.sidebar-user {
+  margin: 16px 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.sidebar-user-label {
+  font-size: 11px;
+  color: #a8bcd4;
+  margin-bottom: 4px;
+}
+
+.sidebar-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sidebar-user-role {
+  font-size: 10px;
+  color: var(--dorado);
+  margin-top: 3px;
+  letter-spacing: 0.8px;
+}
+
+.sidebar-menu-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #a8bcd4;
+  letter-spacing: 1px;
+  padding: 8px 20px 6px;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #a8bcd4;
+  transition: all 0.2s;
+}
+
+.sidebar-menu-item:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.sidebar-menu-item.active {
+  background: rgba(212, 160, 23, 0.15);
+  color: var(--dorado);
+  border-left: 3px solid var(--dorado);
+}
+
+.sidebar-menu-icon {
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-logout {
+  background: transparent;
+  border: none;
+  color: #a8bcd4;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.sidebar-logout:hover {
+  color: var(--dorado);
+}
