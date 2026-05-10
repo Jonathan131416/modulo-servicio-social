@@ -1,6 +1,6 @@
 import axios from 'axios';
 const api = axios.create({ 
-  baseURL: 'http://98.85.123.202:8000/api',
+  baseURL: 'https://rectify-tapeless-setup.ngrok-free.dev/api',
   maxRedirects: 0
 });
 api.interceptors.request.use((config) => {
