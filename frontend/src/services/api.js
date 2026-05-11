@@ -1,12 +1,11 @@
 import axios from 'axios';
-const api = axios.create({ 
+const api = axios.create({
   baseURL: 'https://modulo-servicio-social.duckdns.org/api',
   maxRedirects: 0
 });
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) config.headers.Authorization = `Bearer ${token}`;
-  // Asegurar trailing slash en solicitudes POST
   if (config.method === 'post' && !config.url.endsWith('/')) {
     config.url = config.url + '/';
   }
