@@ -1,6 +1,6 @@
 import axios from 'axios';
 const api = axios.create({
-  baseURL: 'https://modulo-servicio-social.duckdns.org/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://modulo-servicio-social.duckdns.org/api',
   maxRedirects: 0
 });
 api.interceptors.request.use((config) => {
