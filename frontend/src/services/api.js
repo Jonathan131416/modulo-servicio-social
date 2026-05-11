@@ -25,3 +25,4 @@ export const solicitudService = {
   revision: (id) => api.patch(`/solicitudes/${id}/revision`),
 };
 export default api;
+# force rebuild Mon May 11 04:15:39 CST 2026
