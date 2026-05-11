@@ -35,8 +35,8 @@ solicitud_uc = SolicitudUseCases(solicitud_repo)
 auth_uc = AuthUseCases(usuario_repo)
 
 # Rutas
-app.include_router(create_auth_router(auth_uc))
-app.include_router(create_solicitud_router(solicitud_uc))
+app.include_router(create_auth_router(auth_uc), prefix="/api")
+app.include_router(create_solicitud_router(solicitud_uc), prefix="/api")
 
 @app.get("/health")
 def health():

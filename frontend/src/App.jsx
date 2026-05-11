@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Registro from './pages/Registro';
 import AlumnoDashboard from './pages/AlumnoDashboard';
 import CoordinadorDashboard from './pages/CoordinadorDashboard';
+import { useEffect } from 'react';
 
 const PrivateRoute = ({ children, rol }) => {
   const { usuario } = useAuth();
@@ -13,7 +14,23 @@ const PrivateRoute = ({ children, rol }) => {
 };
 
 function AppRoutes() {
-  const { usuario } = useAuth();
+  const { usuario, loginFromToken } = useAuth();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tokenUrl = params.get("token");
+    const rolUrl = params.get("rol");
+    const rfcUrl = params.get("rfc");
+
+    if (tokenUrl) {
+      localStorage.setItem("token", tokenUrl);
+      if (rolUrl) localStorage.setItem("userRole", rolUrl);
+      if (rfcUrl) localStorage.setItem("userRFC", rfcUrl);
+      loginFromToken(tokenUrl, rolUrl, rfcUrl);
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  }, []);
+
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
@@ -28,7 +45,9 @@ function AppRoutes() {
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter><AppRoutes /></BrowserRouter>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </AuthProvider>
   );
 }
